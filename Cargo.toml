@@ -1,0 +1,15 @@
+[package]
+name = "painless"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "*", features = ["full"] }
+
+[profile.release]
+opt-level = "z"
+debug = false
+lto = true
+panic = "abort"
