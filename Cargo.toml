@@ -7,6 +7,8 @@ edition = "2021"
 
 [dependencies]
 tokio = { version = "*", features = ["full"] }
+wasmtime = { version = "*", features = ["full"] }
+anyhow = { version = "*" }
 
 [profile.release]
 opt-level = "z"

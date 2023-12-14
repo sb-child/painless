@@ -1,13 +1,13 @@
-use std::thread;
-
 use tokio::{
     self, io,
     net::TcpListener,
     sync::{mpsc, oneshot},
 };
 
+use anyhow::Result;
+
 #[tokio::main]
-async fn main() -> Result<(), io::Error> {
+async fn main() -> Result<()> {
     let (tx, mut rx) = mpsc::channel(4096);
     let (shutdown_tx, shutdown_rx) = oneshot::channel();
     tokio::spawn(async move {
